@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar><ion-title>Settings</ion-title></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>BLE</ion-label>
+    <ion-label slot="end">{{ deviceName || 'No emparejado' }}</ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-button expand="block" (click)="pair()">Emparejar</ion-button>
+    <ion-button color="danger" expand="block" (click)="unpair()">Desemparejar</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sensibilidad</ion-label>
+    <ion-range min="0" max="100" [(ngModel)]="sensitivity"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Umbral</ion-label>
+    <ion-input [value]="threshold" readonly></ion-input>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-button expand="block" (click)="calibrate()" [disabled]="calibrating">{{ calibrating ? 'Calibrando...' : 'Calibrar' }}</ion-button>
+    <ion-button expand="block" color="primary" (click)="save()">Guardar</ion-button>
+  </ion-item>
+</ion-content>

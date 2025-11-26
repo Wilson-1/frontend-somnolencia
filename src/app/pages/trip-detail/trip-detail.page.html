@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar><ion-title>Trip Detail</ion-title></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let e of events">
+      <ion-label>
+        <h3>{{ e.type || 'Evento' }} — {{ e.id }}</h3>
+        <p>{{ e.timestamp | date:'short' }} — eyeDuration: {{ e.eyeDuration }}s — bpm: {{ e.bpm }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

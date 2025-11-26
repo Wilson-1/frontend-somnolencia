@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar><ion-title>Dashboard</ion-title></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header><ion-card-title>Resumen del día</ion-card-title></ion-card-header>
+    <ion-card-content><pre>{{ summary?.summary | json }}</pre></ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header><ion-card-title>Último evento</ion-card-title></ion-card-header>
+    <ion-card-content><pre>{{ summary?.lastEvent | json }}</pre></ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" (click)="toggleTrip()">{{ running ? 'Parar viaje' : 'Iniciar viaje' }}</ion-button>
+</ion-content>
